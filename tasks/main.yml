@@ -12,13 +12,4 @@
   template: src=deluge-web.sh dest=/root/deluge-dockerized/deluge-web.sh mode=0755
 
 - name: build a Docker image for deluge
-  command: docker build -t gitinsky/deluge:0.1.0 --rm /root/deluge-dockerized
-
-- name: check if a deluge container is started
-  command: bash -c "docker ps | grep deluge"
-  ignore_errors: True
-  register: result
-
-- name: start a deluge container
-  command: docker run -d -p=8112:8112 -v {{ ext_deluge_completed_volume }}:{{ int_deluge_completed }} -v {{ ext_deluge_download_volume }}:/var/lib/deluge -name deluge gitinsky/deluge:0.1.0
-  when: result|failed
+  command: docker build -t gitinsky/deluge:0.2.0 --rm /root/deluge-dockerized
