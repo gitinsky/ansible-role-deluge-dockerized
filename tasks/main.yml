@@ -12,4 +12,4 @@
   template: src=deluge-web.sh dest=/root/deluge-dockerized/deluge-web.sh mode=0755
 
 - name: build a Docker image for deluge
-  command: docker build -t gitinsky/deluge:0.2.1 --rm /root/deluge-dockerized
+  command: docker build -t gitinsky/deluge:0.2.2 --rm /root/deluge-dockerized
